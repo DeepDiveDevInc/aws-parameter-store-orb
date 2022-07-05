@@ -1,8 +1,8 @@
 #!/bin/bash
 mkdir -p /tmp/parameterstore/
-for row in $(aws ssm describe-parameters --no-paginate --parameter-filters << parameters.filter >> | jq -c '.Parameters[]'); do
+for row in $(aws ssm describe-parameters --no-paginate --parameter-filters ${PARAM_FILTER} | jq -c '.Parameters[]'); do
   _jq() {
-    PARNAME=$(jq -r '.Name' \<<< "${row}")
+    PARNAME=$(jq -r '.Name' <<< "${row}")
     PARDATA=$(aws ssm get-parameters --with-decryption --names "${PARNAME}" | jq '.Parameters[].Value')
     if [ -z "$PARDATA" ]
     then

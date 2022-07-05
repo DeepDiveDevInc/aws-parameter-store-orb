@@ -12,5 +12,7 @@ steps:
   - aws-cli/install
   - aws-cli/configure
   - run:
+      environment:
+        PARAM_FILTER: <<parameters.filter>>
       name: Load AWS Parameters into environment
       command: <<include(scripts/load.sh)>>
