@@ -1,0 +1,11 @@
+description: >
+  Default Python 2.7 environment. To load environment variables into your own job, define a job with Python installed an invoke the "load" command
+docker:
+  - image: '<<parameters.image>>'
+parameters:
+  image:
+    default: circleci/python:2.7
+    description: >
+      Select a custom Docker image.
+      https://hub.docker.com/r/circleci/
+    type: string
