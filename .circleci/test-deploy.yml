@@ -48,7 +48,7 @@ workflows:
           pub-type: production
           requires:
             - orb-tools/pack
-            - command-tests
+            - command-load-test
           context: orb-publishing
           filters:
             branches:
