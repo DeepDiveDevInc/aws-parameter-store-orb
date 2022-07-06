@@ -26,8 +26,6 @@ workflows:
           filters: *filters
       - aws-parameter-store/with-secrets:
           filters: *filters
-      - jobs-tests:
-          filters: *filters
       - orb-tools/pack:
           filters: *filters
       - orb-tools/publish:
