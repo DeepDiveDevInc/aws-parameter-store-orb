@@ -19,9 +19,5 @@ for row in $(aws ssm describe-parameters --no-paginate --parameter-filters ${PAR
   }
   _jq
 done
-<<<<<<< HEAD
 cat /tmp/parameterstore/PARAMETERSTORESOURCEFILE >> $BASH_ENV
 source $BASH_ENV
-=======
-source /tmp/parameterstore/PARAMETERSTORESOURCEFILE
->>>>>>> origin/master
