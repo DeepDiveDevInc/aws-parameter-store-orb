@@ -1,0 +1,18 @@
+description: >
+  Fetch and load in your parameter store values as environment variables.
+
+parameters:
+  filter:
+    type: string
+    description: >
+      One or more filters. Use a filter to return a more specific list of results. Ex: "Key=string,Option=string,Values=string,..."
+    default: ''
+
+steps:
+  - aws-cli/install
+  - aws-cli/setup
+  - run:
+      environment:
+        PARAM_FILTER: <<parameters.filter>>
+      name: Load AWS Parameters into environment
+      command: <<include(scripts/load.sh)>>
