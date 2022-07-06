@@ -12,4 +12,4 @@ display:
   source_url: 'https://github.com/DeepDiveDevInc/aws-parameter-store-orb'
 # If your orb requires other orbs, you can import them like this. Otherwise remove the "orbs" stanza.
 orbs:
-  aws-cli: circleci/aws-cli@0.1.13
+  aws-cli: circleci/aws-cli@3.1.1
