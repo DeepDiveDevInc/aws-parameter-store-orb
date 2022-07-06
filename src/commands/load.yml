@@ -10,7 +10,7 @@ parameters:
 
 steps:
   - aws-cli/install
-  - aws-cli/configure
+  - aws-cli/setup
   - run:
       environment:
         PARAM_FILTER: <<parameters.filter>>
